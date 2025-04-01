@@ -10,7 +10,9 @@ This application allows users to:
 - View detailed information about each match
 - Select ticket categories and quantities
 - Add tickets to a cart
-- Review cart and proceed to checkout
+- Authenticate with Clerk
+- Checkout with Stripe (simulated)
+- View order confirmation
 
 ## Technologies Used
 
@@ -18,6 +20,8 @@ This application allows users to:
 - **Language**: TypeScript
 - **UI/Styling**: Tailwind CSS + Shadcn/ui
 - **State Management**: React Context API
+- **Authentication**: Clerk
+- **Payment Processing**: Stripe (mock implementation)
 - **Image Optimization**: Next.js Image component
 
 ## Technical Features
@@ -25,6 +29,9 @@ This application allows users to:
 - **Server-Side Generation (SSG)** for match listing and detail pages
 - **Optimized Images** using Next.js Image component for better performance
 - **Responsive Design** that works well on mobile, tablet, and desktop
+- **Authentication** with Clerk (sign up, sign in, user profiles)
+- **Protected Routes** for account management
+- **Payment Processing** with Stripe (simulated)
 - **Accessibility** features including proper semantic HTML and ARIA labels
 - **Clean Component Structure** with reusable UI components
 - **Client-side Filtering** for quick match search
@@ -48,12 +55,21 @@ cd football-tickets
 npm install
 ```
 
-3. Run the development server:
+3. Set up environment variables:
+   - Copy `.env.example` to `.env.local`
+   - Update with your own API keys if needed
+   - For demo purposes, you can use the defaults
+
+```bash
+cp .env.example .env.local
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Project Structure
 
@@ -63,6 +79,13 @@ npm run dev
 - `src/data`: Mock data for matches and tickets
 - `src/lib`: Utilities, hooks, and store (cart context)
 - `public/images`: Images for football matches
+
+## Authentication & Checkout
+
+This demo implements:
+- User authentication with Clerk (sign up, sign in, profile management)
+- Simulated checkout process with Stripe
+- Protected routes for user account information
 
 ## Notes
 

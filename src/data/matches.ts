@@ -4,6 +4,7 @@ export interface TicketCategory {
   price: number;
   description: string;
   available: number;
+  imageUrl?: string; // Optional image for ticket categories
 }
 
 export interface Match {
@@ -26,7 +27,7 @@ const matches: Match[] = [
     date: '2025-10-20T19:00:00Z',
     stadium: 'Camp Nou',
     location: 'Barcelona, Spain',
-    imageUrl: '/images/barcelona-realmadrid.jpg',
+    imageUrl: 'https://placehold.co/640x360/E2E8F0/AAAAAA/png?text=Camp+Nou',
     description: 'El Clásico - The biggest rivalry in Spanish football. FC Barcelona takes on Real Madrid in a match that will determine the league leader.',
     categories: [
       {
@@ -35,6 +36,7 @@ const matches: Match[] = [
         price: 250,
         description: 'Best seats in the stadium with perfect view of the action',
         available: 85,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+1'
       },
       {
         id: 'cat2',
@@ -42,6 +44,7 @@ const matches: Match[] = [
         price: 150,
         description: 'Great seats with excellent view of the field',
         available: 120,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+2'
       },
       {
         id: 'cat3',
@@ -49,6 +52,7 @@ const matches: Match[] = [
         price: 90,
         description: 'Good seats with decent view of the action',
         available: 200,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+3'
       },
       {
         id: 'vip1',
@@ -56,6 +60,7 @@ const matches: Match[] = [
         price: 500,
         description: 'Exclusive VIP experience with catering and private seating',
         available: 25,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=VIP'
       }
     ]
   },
@@ -66,7 +71,7 @@ const matches: Match[] = [
     date: '2025-11-05T20:00:00Z',
     stadium: 'Old Trafford',
     location: 'Manchester, UK',
-    imageUrl: '/images/man-liverpool.jpg',
+    imageUrl: 'https://placehold.co/640x360/E2E8F0/AAAAAA/png?text=Old+Trafford',
     description: 'The North-West derby between two of England\'s most successful clubs. A fierce rivalry that dates back over a century.',
     categories: [
       {
@@ -75,6 +80,7 @@ const matches: Match[] = [
         price: 220,
         description: 'Best seats in the stadium with perfect view of the action',
         available: 65,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+1'
       },
       {
         id: 'cat2',
@@ -82,6 +88,7 @@ const matches: Match[] = [
         price: 140,
         description: 'Great seats with excellent view of the field',
         available: 110,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+2'
       },
       {
         id: 'cat3',
@@ -89,6 +96,7 @@ const matches: Match[] = [
         price: 85,
         description: 'Good seats with decent view of the action',
         available: 180,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+3'
       },
       {
         id: 'vip1',
@@ -96,6 +104,7 @@ const matches: Match[] = [
         price: 450,
         description: 'Exclusive VIP experience with catering and private seating',
         available: 20,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=VIP'
       }
     ]
   },
@@ -106,7 +115,7 @@ const matches: Match[] = [
     date: '2025-11-15T18:30:00Z',
     stadium: 'Allianz Arena',
     location: 'Munich, Germany',
-    imageUrl: '/images/bayern-dortmund.jpg',
+    imageUrl: 'https://placehold.co/640x360/E2E8F0/AAAAAA/png?text=Allianz+Arena',
     description: 'Der Klassiker - Germany\'s biggest football rivalry between Bayern Munich and Borussia Dortmund.',
     categories: [
       {
@@ -115,6 +124,7 @@ const matches: Match[] = [
         price: 180,
         description: 'Best seats in the stadium with perfect view of the action',
         available: 95,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+1'
       },
       {
         id: 'cat2',
@@ -122,6 +132,7 @@ const matches: Match[] = [
         price: 120,
         description: 'Great seats with excellent view of the field',
         available: 150,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+2'
       },
       {
         id: 'cat3',
@@ -129,6 +140,7 @@ const matches: Match[] = [
         price: 75,
         description: 'Good seats with decent view of the action',
         available: 230,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+3'
       },
       {
         id: 'vip1',
@@ -136,6 +148,7 @@ const matches: Match[] = [
         price: 350,
         description: 'Exclusive VIP experience with catering and private seating',
         available: 30,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=VIP'
       }
     ]
   },
@@ -146,7 +159,7 @@ const matches: Match[] = [
     date: '2025-11-23T20:45:00Z',
     stadium: 'Parc des Princes',
     location: 'Paris, France',
-    imageUrl: '/images/psg-marseille.jpg',
+    imageUrl: 'https://placehold.co/640x360/E2E8F0/AAAAAA/png?text=Parc+des+Princes',
     description: 'Le Classique - The fierce rivalry between Paris Saint-Germain and Olympique de Marseille, two of France\'s most popular clubs.',
     categories: [
       {
@@ -155,6 +168,7 @@ const matches: Match[] = [
         price: 190,
         description: 'Best seats in the stadium with perfect view of the action',
         available: 80,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+1'
       },
       {
         id: 'cat2',
@@ -162,6 +176,7 @@ const matches: Match[] = [
         price: 130,
         description: 'Great seats with excellent view of the field',
         available: 120,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+2'
       },
       {
         id: 'cat3',
@@ -169,6 +184,7 @@ const matches: Match[] = [
         price: 80,
         description: 'Good seats with decent view of the action',
         available: 210,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+3'
       },
       {
         id: 'vip1',
@@ -176,6 +192,7 @@ const matches: Match[] = [
         price: 380,
         description: 'Exclusive VIP experience with catering and private seating',
         available: 25,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=VIP'
       }
     ]
   },
@@ -186,7 +203,7 @@ const matches: Match[] = [
     date: '2025-12-05T20:45:00Z',
     stadium: 'Allianz Stadium',
     location: 'Turin, Italy',
-    imageUrl: '/images/juventus-milan.jpg',
+    imageUrl: 'https://placehold.co/640x360/E2E8F0/AAAAAA/png?text=Allianz+Stadium',
     description: 'A classic Serie A matchup between two of Italy\'s most decorated clubs with a combined 50+ domestic league titles.',
     categories: [
       {
@@ -195,6 +212,7 @@ const matches: Match[] = [
         price: 175,
         description: 'Best seats in the stadium with perfect view of the action',
         available: 75,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+1'
       },
       {
         id: 'cat2',
@@ -202,6 +220,7 @@ const matches: Match[] = [
         price: 115,
         description: 'Great seats with excellent view of the field',
         available: 115,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+2'
       },
       {
         id: 'cat3',
@@ -209,6 +228,7 @@ const matches: Match[] = [
         price: 70,
         description: 'Good seats with decent view of the action',
         available: 195,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+3'
       },
       {
         id: 'vip1',
@@ -216,6 +236,7 @@ const matches: Match[] = [
         price: 300,
         description: 'Exclusive VIP experience with catering and private seating',
         available: 20,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=VIP'
       }
     ]
   },
@@ -226,7 +247,7 @@ const matches: Match[] = [
     date: '2025-12-12T17:30:00Z',
     stadium: 'Emirates Stadium',
     location: 'London, UK',
-    imageUrl: '/images/arsenal-tottenham.jpg',
+    imageUrl: 'https://placehold.co/640x360/E2E8F0/AAAAAA/png?text=Emirates+Stadium',
     description: 'The North London Derby - One of the fiercest local rivalries in English football between Arsenal and Tottenham Hotspur.',
     categories: [
       {
@@ -235,6 +256,7 @@ const matches: Match[] = [
         price: 200,
         description: 'Best seats in the stadium with perfect view of the action',
         available: 60,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+1'
       },
       {
         id: 'cat2',
@@ -242,6 +264,7 @@ const matches: Match[] = [
         price: 140,
         description: 'Great seats with excellent view of the field',
         available: 100,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+2'
       },
       {
         id: 'cat3',
@@ -249,6 +272,7 @@ const matches: Match[] = [
         price: 85,
         description: 'Good seats with decent view of the action',
         available: 180,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=Cat+3'
       },
       {
         id: 'vip1',
@@ -256,6 +280,7 @@ const matches: Match[] = [
         price: 380,
         description: 'Exclusive VIP experience with catering and private seating',
         available: 20,
+        imageUrl: 'https://placehold.co/400x300/E2E8F0/AAAAAA/png?text=VIP'
       }
     ]
   }

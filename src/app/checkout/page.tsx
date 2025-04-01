@@ -1,29 +1,45 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { formatDate, formatTime, formatPrice } from '@/lib/utils';
 import { useCart } from '@/lib/store';
+import { createCheckoutSession } from '@/lib/stripe';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { X } from 'lucide-react';
 
 export default function CheckoutPage() {
   const { items, removeFromCart, clearCart, totalPrice } = useCart();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleCheckout = () => {
-    // In a real app, this would initiate payment processing
-    alert('Thank you for your purchase! In a real app, this would redirect to payment processing.');
-    clearCart();
+  const handleCheckout = async () => {
+    if (items.length === 0) return;
+    
+    try {
+      setIsLoading(true);
+      // In a real app, this would create a Stripe checkout session
+      // and redirect to Stripe's hosted checkout page
+      const session = await createCheckoutSession(items);
+      
+      // For demo, we'll redirect to a success page with the mock session ID
+      window.location.href = session.url;
+    } catch (error) {
+      console.error('Error during checkout:', error);
+      alert('There was an error processing your payment. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <div className="container py-8">
-      <div className="flex flex-col items-start gap-4 mb-8">
+      <div className="flex flex-col items-center text-center gap-4 mb-8">
         <h1 className="text-3xl font-extrabold tracking-tight lg:text-4xl">
           Your Cart
         </h1>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-xl text-muted-foreground max-w-2xl">
           Review your tickets before checkout
         </p>
       </div>
@@ -114,10 +130,14 @@ export default function CheckoutPage() {
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-2">
-                  <Button onClick={handleCheckout} className="w-full">
-                    Proceed to Payment
+                  <Button 
+                    onClick={handleCheckout} 
+                    className="w-full"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? 'Processing...' : 'Checkout with Stripe'}
                   </Button>
-                  <Button variant="outline" onClick={clearCart} className="w-full">
+                  <Button variant="outline" onClick={clearCart} className="w-full" disabled={isLoading}>
                     Clear Cart
                   </Button>
                 </CardFooter>
