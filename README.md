@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Football Tickets Demo
+
+A demo front-end application for browsing and selecting football match tickets. This project showcases proficiency in React, Next.js, TypeScript, and modern front-end best practices.
+
+## Project Overview
+
+This application allows users to:
+- Browse upcoming football matches
+- Filter matches by search terms
+- View detailed information about each match
+- Select ticket categories and quantities
+- Add tickets to a cart
+- Review cart and proceed to checkout
+
+## Technologies Used
+
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **UI/Styling**: Tailwind CSS + Shadcn/ui
+- **State Management**: React Context API
+- **Image Optimization**: Next.js Image component
+
+## Technical Features
+
+- **Server-Side Generation (SSG)** for match listing and detail pages
+- **Optimized Images** using Next.js Image component for better performance
+- **Responsive Design** that works well on mobile, tablet, and desktop
+- **Accessibility** features including proper semantic HTML and ARIA labels
+- **Clean Component Structure** with reusable UI components
+- **Client-side Filtering** for quick match search
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.17.0 or later
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/football-tickets.git
+cd football-tickets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app`: App Router pages including home, match details, and checkout
+- `src/components`: Reusable UI components
+- `src/components/ui`: Shadcn UI components
+- `src/data`: Mock data for matches and tickets
+- `src/lib`: Utilities, hooks, and store (cart context)
+- `public/images`: Images for football matches
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This is a demo project and doesn't include real payment processing or backend integration. It's designed to showcase front-end development skills and modern React/Next.js patterns.
